@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace FortuneInventory
+{
+    public partial class WindowControl : Form
+    {
+        public WindowControl()
+        {
+            InitializeComponent();
+        }
+
+        private void WindowControl_Load(object sender, EventArgs e)
+        {
+            
+        }
+    }
+}

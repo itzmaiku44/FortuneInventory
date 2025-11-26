@@ -80,5 +80,11 @@ namespace FortuneInventory
             path.CloseFigure();
             return path;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PaymentForm paymentModal = new PaymentForm();
+            paymentModal.ShowDialog();
+        }
     }
 }

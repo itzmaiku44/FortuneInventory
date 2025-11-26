@@ -133,6 +133,12 @@
   <data name="Dashboard--Streamline-Block-Free" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dashboard--Streamline-Block-Free.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="DeleteIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DeleteIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Contract--Streamline-Tabler" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Contract--Streamline-Tabler.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Dashboard--Streamline-Outlined-Material-Pro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dashboard--Streamline-Outlined-Material-Pro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,25 +148,40 @@
   <data name="User--Streamline-Solar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\User--Streamline-Solar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="EditIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Add--Streamline-Block-Free" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Add--Streamline-Block-Free.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Warehouse-1--Streamline-Core" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Warehouse-1--Streamline-Core.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="User-Security-Personal--Streamline-Nova" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\User-Security-Personal--Streamline-Nova.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Warehouse-1--Streamline-Core-Neon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Warehouse-1--Streamline-Core-Neon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="EditIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Dashboard--Streamline-Outlined-Material-Pro (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dashboard--Streamline-Outlined-Material-Pro (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Warehouse-1--Streamline-Core-Neon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Warehouse-1--Streamline-Core-Neon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="User--Streamline-Block-Free" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\User--Streamline-Block-Free.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Xbox-X--Streamline-Tabler-Filled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Xbox-X--Streamline-Tabler-Filled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="User--Streamline-Block-Free (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\User--Streamline-Block-Free (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Settings--Streamline-Block-Free" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Settings--Streamline-Block-Free.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Search--Streamline-Block-Free" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search--Streamline-Block-Free.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

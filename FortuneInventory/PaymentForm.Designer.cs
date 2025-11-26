@@ -54,6 +54,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Cascadia Mono SemiBold", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(294, 9);
             label1.Name = "label1";
             label1.Size = new Size(303, 85);
@@ -83,12 +84,15 @@
             // 
             radioButton2.AutoSize = true;
             radioButton2.Enabled = false;
+            radioButton2.FlatStyle = FlatStyle.Popup;
             radioButton2.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            radioButton2.ForeColor = Color.White;
             radioButton2.Location = new Point(461, 267);
             radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(166, 36);
+            radioButton2.Size = new Size(164, 39);
             radioButton2.TabIndex = 14;
             radioButton2.Text = "DEBIT CARD";
+            radioButton2.UseCompatibleTextRendering = true;
             radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton1
@@ -96,6 +100,7 @@
             radioButton1.AutoSize = true;
             radioButton1.Checked = true;
             radioButton1.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            radioButton1.ForeColor = Color.White;
             radioButton1.Location = new Point(332, 267);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(94, 36);
@@ -108,6 +113,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.White;
             label6.Location = new Point(83, 271);
             label6.Name = "label6";
             label6.Size = new Size(226, 32);
@@ -117,6 +123,7 @@
             // TotalChangeLabel
             // 
             TotalChangeLabel.Font = new Font("Segoe UI Black", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TotalChangeLabel.ForeColor = Color.White;
             TotalChangeLabel.Location = new Point(332, 197);
             TotalChangeLabel.Name = "TotalChangeLabel";
             TotalChangeLabel.Size = new Size(389, 32);
@@ -129,6 +136,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
             label4.Location = new Point(124, 197);
             label4.Name = "label4";
             label4.Size = new Size(185, 32);
@@ -155,7 +163,7 @@
             TotalAmount.ReadOnly = true;
             TotalAmount.Size = new Size(347, 22);
             TotalAmount.TabIndex = 1;
-            TotalAmount.Text = "99,999";
+            TotalAmount.Text = "1234";
             TotalAmount.TextAlign = HorizontalAlignment.Center;
             // 
             // panel3
@@ -183,6 +191,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
             label3.Location = new Point(79, 126);
             label3.Name = "label3";
             label3.Size = new Size(230, 32);
@@ -193,6 +202,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
             label2.Location = new Point(116, 55);
             label2.Name = "label2";
             label2.Size = new Size(193, 32);
@@ -204,9 +214,9 @@
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.Controls.Add(button2);
             panel2.Controls.Add(button1);
-            panel2.Location = new Point(0, 505);
+            panel2.Location = new Point(0, 488);
             panel2.Name = "panel2";
-            panel2.Size = new Size(894, 82);
+            panel2.Size = new Size(894, 99);
             panel2.TabIndex = 2;
             // 
             // button2
@@ -215,13 +225,14 @@
             button2.FlatStyle = FlatStyle.Popup;
             button2.Font = new Font("Noto Sans SC Medium", 15.75F, FontStyle.Bold);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(225, 9);
+            button2.Location = new Point(233, 9);
             button2.Margin = new Padding(10, 3, 10, 10);
             button2.Name = "button2";
             button2.Size = new Size(207, 63);
             button2.TabIndex = 8;
             button2.Text = "CANCEL";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -229,19 +240,20 @@
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Noto Sans SC Medium", 15.75F, FontStyle.Bold);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(447, 9);
+            button1.Location = new Point(455, 9);
             button1.Margin = new Padding(5, 3, 10, 10);
             button1.Name = "button1";
             button1.Size = new Size(220, 63);
             button1.TabIndex = 7;
             button1.Text = "CHECKOUT";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
             // 
             // PaymentForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.GhostWhite;
+            BackColor = Color.FromArgb(30, 40, 52);
             ClientSize = new Size(894, 587);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -251,6 +263,7 @@
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterParent;
             Text = "PaymentForm";
+            TransparencyKey = Color.Transparent;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel4.ResumeLayout(false);

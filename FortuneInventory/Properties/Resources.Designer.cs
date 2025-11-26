@@ -63,6 +63,26 @@ namespace FortuneInventory.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Add__Streamline_Block_Free {
+            get {
+                object obj = ResourceManager.GetObject("Add--Streamline-Block-Free", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Contract__Streamline_Tabler {
+            get {
+                object obj = ResourceManager.GetObject("Contract--Streamline-Tabler", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Dashboard__Streamline_Block_Free {
             get {
                 object obj = ResourceManager.GetObject("Dashboard--Streamline-Block-Free", resourceCulture);
@@ -103,9 +123,49 @@ namespace FortuneInventory.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DeleteIcon {
+            get {
+                object obj = ResourceManager.GetObject("DeleteIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EditIcon {
+            get {
+                object obj = ResourceManager.GetObject("EditIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EditIcon1 {
+            get {
+                object obj = ResourceManager.GetObject("EditIcon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap No_Poverty__Streamline_Core {
             get {
                 object obj = ResourceManager.GetObject("No-Poverty--Streamline-Core", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Search__Streamline_Block_Free {
+            get {
+                object obj = ResourceManager.GetObject("Search--Streamline-Block-Free", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -206,6 +266,16 @@ namespace FortuneInventory.Properties {
         internal static System.Drawing.Bitmap Warehouse_1__Streamline_Core_Neon {
             get {
                 object obj = ResourceManager.GetObject("Warehouse-1--Streamline-Core-Neon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xbox_X__Streamline_Tabler_Filled {
+            get {
+                object obj = ResourceManager.GetObject("Xbox-X--Streamline-Tabler-Filled", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

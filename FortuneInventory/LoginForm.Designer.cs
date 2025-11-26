@@ -225,6 +225,7 @@
             Controls.Add(panel5);
             FormBorderStyle = FormBorderStyle.None;
             Name = "LoginForm";
+            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LoginForm";
             Load += LoginForm_Load;

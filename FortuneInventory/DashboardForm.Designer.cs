@@ -50,7 +50,7 @@
             label13 = new Label();
             dataGridView1 = new DataGridView();
             id = new DataGridViewTextBoxColumn();
-            ProductName = new DataGridViewTextBoxColumn();
+            ProductNameColumnDashboard = new DataGridViewTextBoxColumn();
             ProductSale = new DataGridViewTextBoxColumn();
             panel7 = new Panel();
             label14 = new Label();
@@ -311,7 +311,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id, ProductName, ProductSale });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id, ProductNameColumnDashboard, ProductSale });
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.GridColor = Color.Silver;
             dataGridView1.Location = new Point(0, 0);
@@ -328,12 +328,12 @@
             id.ReadOnly = true;
             id.Width = 49;
             // 
-            // ProductName
+            // ProductNameColumnDashboard
             // 
-            ProductName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ProductName.HeaderText = "Product Name";
-            ProductName.Name = "ProductName";
-            ProductName.ReadOnly = true;
+            ProductNameColumnDashboard.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ProductNameColumnDashboard.HeaderText = "Product Name";
+            ProductNameColumnDashboard.Name = "ProductNameColumnDashboard";
+            ProductNameColumnDashboard.ReadOnly = true;
             // 
             // ProductSale
             // 
@@ -415,7 +415,7 @@
         public DataGridView dataGridView1;
         private Panel panel7;
         private DataGridViewTextBoxColumn id;
-        private DataGridViewTextBoxColumn ProductName;
+        private DataGridViewTextBoxColumn ProductNameColumnDashboard;
         private DataGridViewTextBoxColumn ProductSale;
         private Label label14;
     }

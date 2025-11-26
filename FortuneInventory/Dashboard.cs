@@ -17,11 +17,38 @@ namespace FortuneInventory
         private Button? _activeButton;
         private readonly Color _activeBackColor = Color.White;
         private readonly Color _activeForeColor = Color.FromArgb(30, 40, 52);
+		private readonly Color _hoverBackColor = Color.FromArgb(85, 30, 40, 52); // rgba(30, 40, 52, 0.85)
 
         public Dashboard()
         {
             InitializeComponent();
+
+			// Wire hover events for sidebar buttons
+			HookSidebarButtonHover(DashboardButton);
+			HookSidebarButtonHover(OrderButton);
+			HookSidebarButtonHover(InventoryButton);
+			HookSidebarButtonHover(UserManageButton);
         }
+
+		private void HookSidebarButtonHover(Button button)
+		{
+			button.MouseEnter += SidebarButton_MouseEnter;
+			button.MouseLeave += SidebarButton_MouseLeave;
+		}
+
+		private void SidebarButton_MouseEnter(object? sender, EventArgs e)
+		{
+			if (sender is not Button btn) return;
+			if (btn == _activeButton) return; // keep active style
+			btn.BackColor = _hoverBackColor;
+		}
+
+		private void SidebarButton_MouseLeave(object? sender, EventArgs e)
+		{
+			if (sender is not Button btn) return;
+			if (btn == _activeButton) return; // keep active style
+			btn.BackColor = Color.Transparent;
+		}
 
         private void ResetAllButtons()
         {

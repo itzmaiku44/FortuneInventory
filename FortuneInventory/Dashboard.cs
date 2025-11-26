@@ -14,13 +14,35 @@ namespace FortuneInventory
     public partial class Dashboard : Form
     {
         private const int Panel3CornerRadius = 10;
+        private Button? _activeButton;
+        private readonly Color _activeBackColor = Color.White;
+        private readonly Color _activeForeColor = Color.FromArgb(30, 40, 52);
 
         public Dashboard()
         {
             InitializeComponent();
-
         }
 
+        private void ResetAllButtons()
+        {
+            var buttons = new[] { DashboardButton, OrderButton, InventoryButton, UserManageButton };
+            foreach (var button in buttons)
+            {
+                if (button != null)
+                {
+                    button.BackColor = Color.Transparent;
+                    button.ForeColor = SystemColors.Control;
+                }
+            }
+        }
+
+        private void SetActiveButton(Button button)
+        {
+            ResetAllButtons();
+            button.BackColor = _activeBackColor;
+            button.ForeColor = _activeForeColor;
+            _activeButton = button;
+        }
 
         public void loadform(object form)
         {
@@ -36,61 +58,30 @@ namespace FortuneInventory
             this.MainPanel.Controls.Add(f);
             this.MainPanel.Tag = f;
             f.Show();
-
-
         }
 
         private void DashboardButton_Click(object sender, EventArgs e)
         {
             loadform(new DashboardForm());
-            if (DashboardButton.Focused)
-            {
-                DashboardButton.BackColor = Color.FromArgb(13, 20, 28);
-            }
-            else if (!DashboardButton.Focused)
-            {
-                DashboardButton.BackColor = Color.Transparent;
-            }
-
+            SetActiveButton(DashboardButton);
         }
 
         private void OrderButton_Click(object sender, EventArgs e)
         {
             loadform(new OrderForm());
-            if (OrderButton.Focused)
-            {
-                OrderButton.BackColor = Color.FromArgb(13, 20, 28);
-            }
-            else
-            {
-                OrderButton.BackColor = Color.Transparent;
-            }
+            SetActiveButton(OrderButton);
         }
 
         private void InventoryButton_Click(object sender, EventArgs e)
         {
             loadform(new InventoryForm());
-            if (InventoryButton.Focused)
-            {
-                InventoryButton.BackColor = Color.FromArgb(13, 20, 28);
-            }
-            else
-            {
-                InventoryButton.BackColor = Color.Transparent;
-            }
+            SetActiveButton(InventoryButton);
         }
 
         private void UserManageButton_Click(object sender, EventArgs e)
         {
             loadform(new UserManageForm());
-            if (UserManageButton.Focused)
-            {
-                UserManageButton.BackColor = Color.FromArgb(13, 20, 28);
-            }
-            else
-            {
-                UserManageButton.BackColor = Color.Transparent;
-            }
+            SetActiveButton(UserManageButton);
         }
 
         private void UserLabel_Click(object sender, EventArgs e)

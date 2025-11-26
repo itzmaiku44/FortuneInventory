@@ -86,7 +86,6 @@
             label3.Size = new Size(82, 21);
             label3.TabIndex = 4;
             label3.Text = "Password";
-            label3.Click += label3_Click;
             // 
             // panel1
             // 

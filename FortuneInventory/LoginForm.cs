@@ -23,11 +23,6 @@ namespace FortuneInventory
             FormClosed += LoginForm_FormClosed;
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void LoginForm_Load(object sender, EventArgs e)
         {
             if (_windowControl == null || _windowControl.IsDisposed)

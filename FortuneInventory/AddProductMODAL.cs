@@ -14,7 +14,7 @@ namespace FortuneInventory
 {
     public partial class AddProductMODAL : Form
     {
-        // Allows the modal to notify the owning InventoryForm (e.g., to reload the grid)
+        // Allows the modal to notify the owning InventoryForm (e.g.: to reload the grid)
         public InventoryForm? OwnerInventory { get; set; }
 
         private readonly string _connectionString =
@@ -90,8 +90,8 @@ namespace FortuneInventory
                 conn.Open();
 
                 string sql = @"
-INSERT INTO dbo.products_t (categoryID, price, productName, discount, quantity, imagePath)
-VALUES (@categoryID, @price, @productName, @discount, @quantity, @imagePath);";
+                            INSERT INTO dbo.products_t (categoryID, price, productName, discount, quantity, imagePath)
+                            VALUES (@categoryID, @price, @productName, @discount, @quantity, @imagePath);";
 
                 using var cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@categoryID", categoryId);

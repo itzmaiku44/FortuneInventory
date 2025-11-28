@@ -248,5 +248,7 @@
         private Button SettingButton;
         private Panel panel1;
         public TextBox UserLabel;
+        public Label UserWelcome;
+        public Label DateLabel;
     }
 }

@@ -33,6 +33,7 @@
             label2 = new Label();
             label3 = new Label();
             panel1 = new Panel();
+            ValidateUserLabel = new Label();
             panel4 = new Panel();
             button1 = new Button();
             panel3 = new Panel();
@@ -89,6 +90,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(ValidateUserLabel);
             panel1.Controls.Add(panel4);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel2);
@@ -99,6 +101,17 @@
             panel1.Size = new Size(435, 266);
             panel1.TabIndex = 6;
             panel1.Paint += panel1_Paint;
+            // 
+            // ValidateUserLabel
+            // 
+            ValidateUserLabel.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ValidateUserLabel.ForeColor = Color.Red;
+            ValidateUserLabel.Location = new Point(64, 234);
+            ValidateUserLabel.Name = "ValidateUserLabel";
+            ValidateUserLabel.Size = new Size(307, 23);
+            ValidateUserLabel.TabIndex = 9;
+            ValidateUserLabel.Text = " ";
+            ValidateUserLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel4
             // 
@@ -260,5 +273,6 @@
         private PictureBox pictureBox3;
         private Panel panel5;
         private Label label4;
+        private Label ValidateUserLabel;
     }
 }

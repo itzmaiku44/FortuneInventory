@@ -44,15 +44,50 @@ namespace FortuneInventory
 
         private async void Button1_Click(object sender, EventArgs e)
         {
+            // Disable button to prevent multiple clicks
             button1.Enabled = false;
-            await Task.Delay(TimeSpan.FromSeconds(2));
+
+            // Get username and password from textboxes
+            string username = textBox1.Text.Trim();
+            string password = textBox2.Text;
+
+            // Validate input
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            {
+                ValidateUserLabel.Text = "Invalid username or password. Please try again.";
+                button1.Enabled = true;
+                return;
+            }
+
+            // Create Login instance and authenticate
+            Login login = new Login(username, password);
+            bool isAuthenticated = login.Authenticate();
+
+            if (!isAuthenticated)
+            {
+                ValidateUserLabel.Text = "Authentication Failed";
+                textBox2.Clear();
+                textBox1.Focus();
+                button1.Enabled = true;
+                return;
+            }
+
+            // Authentication successful - proceed to dashboard
+            await Task.Delay(TimeSpan.FromSeconds(1)); // Brief delay for smooth transition
+
             if (_dashboard == null || _dashboard.IsDisposed)
             {
                 _dashboard = new Dashboard();
                 _dashboard.FormClosed += Dashboard_FormClosed;
             }
 
-            await FadeOutAsync(this);
+            // Get user's full name for display
+            string userFullName = login.GetUserFullName();
+            if (string.IsNullOrWhiteSpace(userFullName))
+            {
+                userFullName = username; // Fallback to username if full name not found
+            }
+
             await FadeOutAsync(this);
             Hide();
 
@@ -63,7 +98,8 @@ namespace FortuneInventory
             CloseWindowControl();
             button1.Enabled = true;
 
-            _dashboard.UserLabel.Text = textBox1.Text;
+            // Set user label in dashboard
+            _dashboard.UserLabel.Text = userFullName;
         }
 
         private void Dashboard_FormClosed(object? sender, FormClosedEventArgs e)

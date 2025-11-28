@@ -184,7 +184,7 @@
             InventoryGrid.MultiSelect = false;
             InventoryGrid.Name = "InventoryGrid";
             InventoryGrid.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = SystemColors.Control;
             dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
             dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
@@ -212,7 +212,7 @@
             Image.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Image.FillWeight = 30F;
             Image.HeaderText = "";
-            Image.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            Image.ImageLayout = DataGridViewImageCellLayout.Stretch;
             Image.Name = "Image";
             Image.ReadOnly = true;
             // 
@@ -237,7 +237,7 @@
             // 
             QuantityColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             QuantityColumn.FillWeight = 29.1744614F;
-            QuantityColumn.HeaderText = "Quantity";
+            QuantityColumn.HeaderText = "Qty";
             QuantityColumn.Name = "QuantityColumn";
             QuantityColumn.ReadOnly = true;
             // 
@@ -305,6 +305,7 @@
         private Panel SearchBarPanel;
         private TextBox textBox1;
         private Panel AddProductPanel;
+        private PictureBox pictureBox1;
         private DataGridViewTextBoxColumn ProductIdColumn;
         private DataGridViewImageColumn Image;
         private DataGridViewTextBoxColumn ProductNameColumn;
@@ -314,6 +315,5 @@
         private DataGridViewTextBoxColumn StatusColumn;
         private DataGridViewImageColumn EditColumn;
         private DataGridViewImageColumn DeleteColumn;
-        private PictureBox pictureBox1;
     }
 }

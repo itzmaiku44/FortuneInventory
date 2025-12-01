@@ -1,0 +1,9 @@
+// Backup of original CheckoutHistory.Designer.cs
+namespace FortuneInventory
+{
+    partial class CheckoutHistory
+    {
+    }
+}
+
+

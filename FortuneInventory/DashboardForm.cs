@@ -16,11 +16,19 @@ namespace FortuneInventory
         private const int CardCornerRadius = 10;
         private readonly Dictionary<Panel, ShadowPanel> _shadowLookup = new();
         private readonly Point _shadowOffset = new(6, 8);
+        private readonly SaleLedger _saleLedger = new SaleLedger();
 
         public DashboardForm()
         {
             InitializeComponent();
             InitializeCardPanels();
+            Load += DashboardForm_Load;
+        }
+
+        private void DashboardForm_Load(object? sender, EventArgs e)
+        {
+            LoadDashboardMetrics();
+            LoadPopularProducts();
         }
 
         private void InitializeCardPanels()
@@ -158,6 +166,71 @@ namespace FortuneInventory
         private void label8_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void LoadDashboardMetrics()
+        {
+            try
+            {
+                // Get today's date range (start of day to end of day)
+                DateTime todayStart = DateTime.Today;
+                DateTime todayEnd = todayStart.AddDays(1).AddTicks(-1);
+
+                // Today's metrics
+                int todayOrders = _saleLedger.GetOrderCount(todayStart, todayEnd);
+                decimal todaySales = _saleLedger.GetTotalSales(todayStart, todayEnd);
+
+                // Total metrics (all time)
+                int totalOrders = _saleLedger.GetOrderCount();
+                decimal totalSales = _saleLedger.GetTotalSales();
+
+                // Average Order Value (Total Sales / Total Orders)
+                decimal aov = totalOrders > 0 ? totalSales / totalOrders : 0;
+
+                // Update labels with formatted numbers
+                TodayOrderLabel.Text = todayOrders.ToString("N0");
+                TodaySaleLabel.Text = $"P{todaySales:N2}";
+                TotalOrderLabel.Text = totalOrders.ToString("N0");
+                TotalSaleLabel.Text = $"P{totalSales:N2}";
+                AovLabel.Text = $"P{aov:N2}";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to load dashboard metrics:\n{ex.Message}", 
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+                // Set default values on error
+                TodayOrderLabel.Text = "0";
+                TodaySaleLabel.Text = "P 0.00";
+                TotalOrderLabel.Text = "0";
+                TotalSaleLabel.Text = "P 0.00";
+                AovLabel.Text = "P 0.00";
+            }
+        }
+
+        private void LoadPopularProducts()
+        {
+            try
+            {
+                PopularProductTable.Rows.Clear();
+
+                var popularProducts = _saleLedger.GetPopularProducts(10);
+
+                foreach (var product in popularProducts)
+                {
+                    int rowIndex = PopularProductTable.Rows.Add();
+                    var row = PopularProductTable.Rows[rowIndex];
+
+                    row.Cells["id"].Value = product.ProductId;
+                    row.Cells["ProductNameColumnDashboard"].Value = product.ProductName;
+                    row.Cells["ProductSale"].Value = product.TotalQuantitySold;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to load popular products:\n{ex.Message}", 
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private sealed class ShadowPanel : Panel

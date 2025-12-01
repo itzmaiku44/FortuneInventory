@@ -17,13 +17,24 @@ namespace FortuneInventory
         private double changeAmount;
         private bool _isPaymentAmountValid;
         private bool _isTotalAmountValid;
+        public List<CartItem>? OrderItems { get; set; }
+
+        public decimal TotalAmountValue
+        {
+            get => (decimal)totalAmount;
+            set
+            {
+                totalAmount = (double)value;
+                TotalAmount.Text = value.ToString("F2");
+                setChangeAmount();
+            }
+        }
 
         public PaymentForm()
         {
             InitializeComponent();
             PaymentAmount.TextChanged += PaymentAmount_TextChanged;
             setChangeAmount();
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -98,6 +109,22 @@ namespace FortuneInventory
 
             if (paymentAmount >= totalAmount)
             {
+                // Payment successful
+                DialogResult = DialogResult.OK;
+                
+                // Show receipt
+                if (OrderItems != null && OrderItems.Count > 0)
+                {
+                    ReceiptForm receipt = new ReceiptForm
+                    {
+                        OrderItems = OrderItems,
+                        TotalAmount = (decimal)totalAmount,
+                        PaymentAmount = (decimal)paymentAmount,
+                        ChangeAmount = (decimal)changeAmount
+                    };
+                    receipt.ShowDialog();
+                }
+                
                 MessageBox.Show("Payment successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
                 return;

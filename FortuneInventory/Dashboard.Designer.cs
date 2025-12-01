@@ -30,6 +30,7 @@
         {
             label2 = new Label();
             SidebarPanel = new Panel();
+            CheckoutHistoryButton = new Button();
             panel1 = new Panel();
             UserLabel = new TextBox();
             SettingButton = new Button();
@@ -59,6 +60,7 @@
             // SidebarPanel
             // 
             SidebarPanel.BackColor = Color.FromArgb(30, 40, 52);
+            SidebarPanel.Controls.Add(CheckoutHistoryButton);
             SidebarPanel.Controls.Add(panel1);
             SidebarPanel.Controls.Add(SettingButton);
             SidebarPanel.Controls.Add(pictureBox1);
@@ -72,6 +74,25 @@
             SidebarPanel.Name = "SidebarPanel";
             SidebarPanel.Size = new Size(313, 1080);
             SidebarPanel.TabIndex = 9;
+            // 
+            // CheckoutHistoryButton
+            // 
+            CheckoutHistoryButton.BackColor = Color.Transparent;
+            CheckoutHistoryButton.FlatAppearance.BorderSize = 0;
+            CheckoutHistoryButton.FlatStyle = FlatStyle.Flat;
+            CheckoutHistoryButton.Font = new Font("Franklin Gothic Medium Cond", 15.75F);
+            CheckoutHistoryButton.ForeColor = SystemColors.Control;
+            CheckoutHistoryButton.Image = Properties.Resources.History__Streamline_Unicons;
+            CheckoutHistoryButton.ImageAlign = ContentAlignment.MiddleLeft;
+            CheckoutHistoryButton.Location = new Point(12, 507);
+            CheckoutHistoryButton.Name = "CheckoutHistoryButton";
+            CheckoutHistoryButton.Size = new Size(285, 62);
+            CheckoutHistoryButton.TabIndex = 9;
+            CheckoutHistoryButton.Text = "Checkout History";
+            CheckoutHistoryButton.TextAlign = ContentAlignment.MiddleLeft;
+            CheckoutHistoryButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            CheckoutHistoryButton.UseVisualStyleBackColor = false;
+            CheckoutHistoryButton.Click += button1_Click;
             // 
             // panel1
             // 
@@ -114,6 +135,7 @@
             SettingButton.TextAlign = ContentAlignment.MiddleLeft;
             SettingButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             SettingButton.UseVisualStyleBackColor = false;
+            SettingButton.Click += SettingButton_Click;
             // 
             // pictureBox1
             // 
@@ -250,5 +272,6 @@
         public TextBox UserLabel;
         public Label UserWelcome;
         public Label DateLabel;
+        private Button CheckoutHistoryButton;
     }
 }

@@ -30,11 +30,11 @@
         {
             OrderPanel = new Panel();
             label18 = new Label();
-            label7 = new Label();
+            OrderNumLabel = new Label();
             CheckOutPanel = new Panel();
-            label17 = new Label();
-            label16 = new Label();
-            label15 = new Label();
+            TotalAmountLabel = new Label();
+            VatLabel = new Label();
+            SubtotalLabel = new Label();
             label14 = new Label();
             label13 = new Label();
             button2 = new Button();
@@ -46,7 +46,6 @@
             label8 = new Label();
             CartItemListPanel = new Panel();
             label6 = new Label();
-            label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             label1 = new Label();
@@ -62,11 +61,10 @@
             // 
             OrderPanel.BackColor = Color.White;
             OrderPanel.Controls.Add(label18);
-            OrderPanel.Controls.Add(label7);
+            OrderPanel.Controls.Add(OrderNumLabel);
             OrderPanel.Controls.Add(CheckOutPanel);
             OrderPanel.Controls.Add(CartItemListPanel);
             OrderPanel.Controls.Add(label6);
-            OrderPanel.Controls.Add(label5);
             OrderPanel.Controls.Add(label4);
             OrderPanel.Controls.Add(label3);
             OrderPanel.Controls.Add(label1);
@@ -84,22 +82,22 @@
             label18.TabIndex = 8;
             label18.Text = "___________________________________________________________________________________________";
             // 
-            // label7
+            // OrderNumLabel
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Variable Display", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.ForeColor = SystemColors.MenuHighlight;
-            label7.Location = new Point(368, 30);
-            label7.Name = "label7";
-            label7.Size = new Size(127, 36);
-            label7.TabIndex = 7;
-            label7.Text = "0000000";
+            OrderNumLabel.AutoSize = true;
+            OrderNumLabel.Font = new Font("Segoe UI Variable Display", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            OrderNumLabel.ForeColor = SystemColors.MenuHighlight;
+            OrderNumLabel.Location = new Point(368, 30);
+            OrderNumLabel.Name = "OrderNumLabel";
+            OrderNumLabel.Size = new Size(127, 36);
+            OrderNumLabel.TabIndex = 7;
+            OrderNumLabel.Text = "0000000";
             // 
             // CheckOutPanel
             // 
-            CheckOutPanel.Controls.Add(label17);
-            CheckOutPanel.Controls.Add(label16);
-            CheckOutPanel.Controls.Add(label15);
+            CheckOutPanel.Controls.Add(TotalAmountLabel);
+            CheckOutPanel.Controls.Add(VatLabel);
+            CheckOutPanel.Controls.Add(SubtotalLabel);
             CheckOutPanel.Controls.Add(label14);
             CheckOutPanel.Controls.Add(label13);
             CheckOutPanel.Controls.Add(button2);
@@ -114,35 +112,35 @@
             CheckOutPanel.Size = new Size(462, 297);
             CheckOutPanel.TabIndex = 6;
             // 
-            // label17
+            // TotalAmountLabel
             // 
-            label17.AutoSize = true;
-            label17.Font = new Font("Verdana", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label17.Location = new Point(320, 155);
-            label17.Name = "label17";
-            label17.Size = new Size(59, 23);
-            label17.TabIndex = 11;
-            label17.Text = "0.00";
+            TotalAmountLabel.AutoSize = true;
+            TotalAmountLabel.Font = new Font("Verdana", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TotalAmountLabel.Location = new Point(320, 155);
+            TotalAmountLabel.Name = "TotalAmountLabel";
+            TotalAmountLabel.Size = new Size(59, 23);
+            TotalAmountLabel.TabIndex = 11;
+            TotalAmountLabel.Text = "0.00";
             // 
-            // label16
+            // VatLabel
             // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Verdana", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label16.Location = new Point(320, 107);
-            label16.Name = "label16";
-            label16.Size = new Size(53, 23);
-            label16.TabIndex = 10;
-            label16.Text = "0.00";
+            VatLabel.AutoSize = true;
+            VatLabel.Font = new Font("Verdana", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            VatLabel.Location = new Point(320, 107);
+            VatLabel.Name = "VatLabel";
+            VatLabel.Size = new Size(53, 23);
+            VatLabel.TabIndex = 10;
+            VatLabel.Text = "0.00";
             // 
-            // label15
+            // SubtotalLabel
             // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Verdana", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label15.Location = new Point(320, 67);
-            label15.Name = "label15";
-            label15.Size = new Size(53, 23);
-            label15.TabIndex = 9;
-            label15.Text = "0.00";
+            SubtotalLabel.AutoSize = true;
+            SubtotalLabel.Font = new Font("Verdana", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SubtotalLabel.Location = new Point(320, 67);
+            SubtotalLabel.Name = "SubtotalLabel";
+            SubtotalLabel.Size = new Size(53, 23);
+            SubtotalLabel.TabIndex = 9;
+            SubtotalLabel.Text = "0.00";
             // 
             // label14
             // 
@@ -222,9 +220,9 @@
             label10.ForeColor = Color.Gray;
             label10.Location = new Point(38, 107);
             label10.Name = "label10";
-            label10.Size = new Size(46, 23);
+            label10.Size = new Size(115, 23);
             label10.TabIndex = 2;
-            label10.Text = "VAT";
+            label10.Text = "VAT (12%)";
             // 
             // label9
             // 
@@ -259,27 +257,17 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(364, 97);
+            label6.Location = new Point(409, 97);
             label6.Name = "label6";
             label6.Size = new Size(64, 25);
             label6.TabIndex = 4;
             label6.Text = "PRICE";
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(298, 97);
-            label5.Name = "label5";
-            label5.Size = new Size(48, 25);
-            label5.TabIndex = 3;
-            label5.Text = "QTY";
-            // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(61, 97);
+            label4.Location = new Point(105, 97);
             label4.Name = "label4";
             label4.Size = new Size(57, 25);
             label4.TabIndex = 2;
@@ -307,7 +295,7 @@
             // 
             // AvailableProductsPanel
             // 
-            AvailableProductsPanel.BackColor = Color.White;
+            AvailableProductsPanel.BackColor = Color.WhiteSmoke;
             AvailableProductsPanel.Controls.Add(ProductsPanel);
             AvailableProductsPanel.Controls.Add(label2);
             AvailableProductsPanel.Dock = DockStyle.Left;
@@ -363,11 +351,10 @@
         private Label label2;
         private Panel CartItemListPanel;
         private Label label6;
-        private Label label5;
         private Label label4;
         private Label label3;
         private Panel CheckOutPanel;
-        private Label label7;
+        private Label OrderNumLabel;
         private Label label8;
         private Button button1;
         private Label label12;
@@ -375,9 +362,9 @@
         private Label label10;
         private Label label9;
         private Button button2;
-        private Label label17;
-        private Label label16;
-        private Label label15;
+        private Label TotalAmountLabel;
+        private Label VatLabel;
+        private Label SubtotalLabel;
         private Label label14;
         private Label label13;
         private Label label18;

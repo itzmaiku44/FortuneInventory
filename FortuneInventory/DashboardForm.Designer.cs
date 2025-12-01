@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             label1 = new Label();
             panel1 = new Panel();
-            label8 = new Label();
+            TodayOrderLabel = new Label();
             label2 = new Label();
             panel2 = new Panel();
-            label3 = new Label();
+            TodaySaleLabel = new Label();
             label4 = new Label();
             panel3 = new Panel();
-            label9 = new Label();
+            TotalOrderLabel = new Label();
             label10 = new Label();
             panel4 = new Panel();
-            label5 = new Label();
-            label11 = new Label();
+            TotalSaleLabel = new Label();
+            TotalSaletext = new Label();
             panel5 = new Panel();
-            label6 = new Label();
+            TotalVatLabel = new Label();
             label12 = new Label();
             panel6 = new Panel();
-            label7 = new Label();
+            AovLabel = new Label();
             label13 = new Label();
-            dataGridView1 = new DataGridView();
+            PopularProductTable = new DataGridView();
             id = new DataGridViewTextBoxColumn();
             ProductNameColumnDashboard = new DataGridViewTextBoxColumn();
             ProductSale = new DataGridViewTextBoxColumn();
@@ -60,7 +60,7 @@
             panel4.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PopularProductTable).BeginInit();
             panel7.SuspendLayout();
             SuspendLayout();
             // 
@@ -79,25 +79,25 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(label8);
+            panel1.Controls.Add(TodayOrderLabel);
             panel1.Controls.Add(label2);
             panel1.Location = new Point(140, 114);
             panel1.Name = "panel1";
-            panel1.Size = new Size(323, 274);
+            panel1.Size = new Size(362, 274);
             panel1.TabIndex = 1;
             // 
-            // label8
+            // TodayOrderLabel
             // 
-            label8.BackColor = Color.Transparent;
-            label8.Dock = DockStyle.Fill;
-            label8.Font = new Font("Segoe UI", 56.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(0, 56);
-            label8.Name = "label8";
-            label8.Size = new Size(323, 218);
-            label8.TabIndex = 1;
-            label8.Text = "99,999";
-            label8.TextAlign = ContentAlignment.MiddleCenter;
-            label8.Click += label8_Click;
+            TodayOrderLabel.BackColor = Color.Transparent;
+            TodayOrderLabel.Dock = DockStyle.Fill;
+            TodayOrderLabel.Font = new Font("Segoe UI", 44.25F, FontStyle.Bold);
+            TodayOrderLabel.Location = new Point(0, 56);
+            TodayOrderLabel.Name = "TodayOrderLabel";
+            TodayOrderLabel.Size = new Size(362, 218);
+            TodayOrderLabel.TabIndex = 1;
+            TodayOrderLabel.Text = "99,999";
+            TodayOrderLabel.TextAlign = ContentAlignment.MiddleCenter;
+            TodayOrderLabel.Click += label8_Click;
             // 
             // label2
             // 
@@ -109,31 +109,31 @@
             label2.Margin = new Padding(10);
             label2.Name = "label2";
             label2.Padding = new Padding(10);
-            label2.Size = new Size(323, 56);
+            label2.Size = new Size(362, 56);
             label2.TabIndex = 0;
             label2.Text = "Today's # of Order";
             // 
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(label3);
+            panel2.Controls.Add(TotalOrderLabel);
             panel2.Controls.Add(label4);
-            panel2.Location = new Point(596, 114);
+            panel2.Location = new Point(620, 114);
             panel2.Name = "panel2";
             panel2.Size = new Size(323, 274);
             panel2.TabIndex = 5;
             // 
-            // label3
+            // TodaySaleLabel
             // 
-            label3.BackColor = Color.Transparent;
-            label3.Dock = DockStyle.Fill;
-            label3.Font = new Font("Segoe UI", 56.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(0, 56);
-            label3.Name = "label3";
-            label3.Size = new Size(323, 218);
-            label3.TabIndex = 1;
-            label3.Text = "99,999";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
+            TodaySaleLabel.BackColor = Color.Transparent;
+            TodaySaleLabel.Dock = DockStyle.Fill;
+            TodaySaleLabel.Font = new Font("Segoe UI", 40.25F, FontStyle.Bold);
+            TodaySaleLabel.Location = new Point(0, 56);
+            TodaySaleLabel.Name = "TodaySaleLabel";
+            TodaySaleLabel.Size = new Size(362, 218);
+            TodaySaleLabel.TabIndex = 1;
+            TodaySaleLabel.Text = "P99,999.99";
+            TodaySaleLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
@@ -147,29 +147,29 @@
             label4.Padding = new Padding(10);
             label4.Size = new Size(323, 56);
             label4.TabIndex = 0;
-            label4.Text = "Today's # of Sales";
+            label4.Text = "Total Order";
             // 
             // panel3
             // 
             panel3.BackColor = Color.White;
-            panel3.Controls.Add(label9);
+            panel3.Controls.Add(TodaySaleLabel);
             panel3.Controls.Add(label10);
-            panel3.Location = new Point(1124, 114);
+            panel3.Location = new Point(1085, 114);
             panel3.Name = "panel3";
-            panel3.Size = new Size(323, 274);
+            panel3.Size = new Size(362, 274);
             panel3.TabIndex = 6;
             // 
-            // label9
+            // TotalOrderLabel
             // 
-            label9.BackColor = Color.Transparent;
-            label9.Dock = DockStyle.Fill;
-            label9.Font = new Font("Segoe UI", 56.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(0, 56);
-            label9.Name = "label9";
-            label9.Size = new Size(323, 218);
-            label9.TabIndex = 1;
-            label9.Text = "99,999";
-            label9.TextAlign = ContentAlignment.MiddleCenter;
+            TotalOrderLabel.BackColor = Color.Transparent;
+            TotalOrderLabel.Dock = DockStyle.Fill;
+            TotalOrderLabel.Font = new Font("Segoe UI", 44.25F, FontStyle.Bold);
+            TotalOrderLabel.Location = new Point(0, 56);
+            TotalOrderLabel.Name = "TotalOrderLabel";
+            TotalOrderLabel.Size = new Size(323, 218);
+            TotalOrderLabel.TabIndex = 1;
+            TotalOrderLabel.Text = "99,999";
+            TotalOrderLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label10
             // 
@@ -181,67 +181,67 @@
             label10.Margin = new Padding(10);
             label10.Name = "label10";
             label10.Padding = new Padding(10);
-            label10.Size = new Size(323, 56);
+            label10.Size = new Size(362, 56);
             label10.TabIndex = 0;
-            label10.Text = "Total Orders";
+            label10.Text = "Today's Sales";
             // 
             // panel4
             // 
             panel4.BackColor = Color.White;
-            panel4.Controls.Add(label5);
-            panel4.Controls.Add(label11);
+            panel4.Controls.Add(TotalSaleLabel);
+            panel4.Controls.Add(TotalSaletext);
             panel4.Location = new Point(140, 454);
             panel4.Name = "panel4";
-            panel4.Size = new Size(323, 274);
+            panel4.Size = new Size(362, 274);
             panel4.TabIndex = 2;
             // 
-            // label5
+            // TotalSaleLabel
             // 
-            label5.BackColor = Color.Transparent;
-            label5.Dock = DockStyle.Fill;
-            label5.Font = new Font("Segoe UI", 56.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(0, 56);
-            label5.Name = "label5";
-            label5.Size = new Size(323, 218);
-            label5.TabIndex = 1;
-            label5.Text = "99,999";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
+            TotalSaleLabel.BackColor = Color.Transparent;
+            TotalSaleLabel.Dock = DockStyle.Fill;
+            TotalSaleLabel.Font = new Font("Segoe UI", 40.25F, FontStyle.Bold);
+            TotalSaleLabel.Location = new Point(0, 56);
+            TotalSaleLabel.Name = "TotalSaleLabel";
+            TotalSaleLabel.Size = new Size(362, 218);
+            TotalSaleLabel.TabIndex = 1;
+            TotalSaleLabel.Text = "P99,999.99";
+            TotalSaleLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label11
+            // TotalSaletext
             // 
-            label11.BackColor = Color.Transparent;
-            label11.Dock = DockStyle.Top;
-            label11.Font = new Font("Century Gothic", 20.25F, FontStyle.Bold);
-            label11.ForeColor = Color.DimGray;
-            label11.Location = new Point(0, 0);
-            label11.Margin = new Padding(10);
-            label11.Name = "label11";
-            label11.Padding = new Padding(10);
-            label11.Size = new Size(323, 56);
-            label11.TabIndex = 0;
-            label11.Text = "Today's Sales";
+            TotalSaletext.BackColor = Color.Transparent;
+            TotalSaletext.Dock = DockStyle.Top;
+            TotalSaletext.Font = new Font("Century Gothic", 20.25F, FontStyle.Bold);
+            TotalSaletext.ForeColor = Color.DimGray;
+            TotalSaletext.Location = new Point(0, 0);
+            TotalSaletext.Margin = new Padding(10);
+            TotalSaletext.Name = "TotalSaletext";
+            TotalSaletext.Padding = new Padding(10);
+            TotalSaletext.Size = new Size(362, 56);
+            TotalSaletext.TabIndex = 0;
+            TotalSaletext.Text = "Total Sales";
             // 
             // panel5
             // 
             panel5.BackColor = Color.White;
-            panel5.Controls.Add(label6);
+            panel5.Controls.Add(TotalVatLabel);
             panel5.Controls.Add(label12);
-            panel5.Location = new Point(596, 454);
+            panel5.Location = new Point(620, 454);
             panel5.Name = "panel5";
             panel5.Size = new Size(323, 274);
             panel5.TabIndex = 2;
             // 
-            // label6
+            // TotalVatLabel
             // 
-            label6.BackColor = Color.Transparent;
-            label6.Dock = DockStyle.Fill;
-            label6.Font = new Font("Segoe UI", 56.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(0, 56);
-            label6.Name = "label6";
-            label6.Size = new Size(323, 218);
-            label6.TabIndex = 1;
-            label6.Text = "99,999";
-            label6.TextAlign = ContentAlignment.MiddleCenter;
+            TotalVatLabel.BackColor = Color.Transparent;
+            TotalVatLabel.Dock = DockStyle.Fill;
+            TotalVatLabel.Font = new Font("Segoe UI", 46.25F, FontStyle.Bold);
+            TotalVatLabel.Location = new Point(0, 56);
+            TotalVatLabel.Name = "TotalVatLabel";
+            TotalVatLabel.Size = new Size(323, 218);
+            TotalVatLabel.TabIndex = 1;
+            TotalVatLabel.Text = "12";
+            TotalVatLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label12
             // 
@@ -255,29 +255,29 @@
             label12.Padding = new Padding(10);
             label12.Size = new Size(323, 56);
             label12.TabIndex = 0;
-            label12.Text = "Total VAT Sales";
+            label12.Text = "VAT %";
             // 
             // panel6
             // 
             panel6.BackColor = Color.White;
-            panel6.Controls.Add(label7);
+            panel6.Controls.Add(AovLabel);
             panel6.Controls.Add(label13);
-            panel6.Location = new Point(1124, 454);
+            panel6.Location = new Point(1085, 454);
             panel6.Name = "panel6";
-            panel6.Size = new Size(323, 274);
+            panel6.Size = new Size(362, 274);
             panel6.TabIndex = 7;
             // 
-            // label7
+            // AovLabel
             // 
-            label7.BackColor = Color.Transparent;
-            label7.Dock = DockStyle.Fill;
-            label7.Font = new Font("Segoe UI", 56.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(0, 56);
-            label7.Name = "label7";
-            label7.Size = new Size(323, 218);
-            label7.TabIndex = 1;
-            label7.Text = "99,999";
-            label7.TextAlign = ContentAlignment.MiddleCenter;
+            AovLabel.BackColor = Color.Transparent;
+            AovLabel.Dock = DockStyle.Fill;
+            AovLabel.Font = new Font("Segoe UI", 40.25F, FontStyle.Bold);
+            AovLabel.Location = new Point(0, 56);
+            AovLabel.Name = "AovLabel";
+            AovLabel.Size = new Size(362, 218);
+            AovLabel.TabIndex = 1;
+            AovLabel.Text = "P99,999.99";
+            AovLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label13
             // 
@@ -289,36 +289,36 @@
             label13.Margin = new Padding(10);
             label13.Name = "label13";
             label13.Padding = new Padding(10);
-            label13.Size = new Size(323, 56);
+            label13.Size = new Size(362, 56);
             label13.TabIndex = 0;
-            label13.Text = "Revenue";
+            label13.Text = "Avg. Order Value";
             // 
-            // dataGridView1
+            // PopularProductTable
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.Transparent;
-            dataGridViewCellStyle1.Font = new Font("MS Reference Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.NullValue = null;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id, ProductNameColumnDashboard, ProductSale });
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.GridColor = Color.Silver;
-            dataGridView1.Location = new Point(0, 0);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(1307, 221);
-            dataGridView1.TabIndex = 8;
+            PopularProductTable.AllowUserToAddRows = false;
+            PopularProductTable.AllowUserToDeleteRows = false;
+            PopularProductTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            PopularProductTable.BackgroundColor = Color.White;
+            PopularProductTable.BorderStyle = BorderStyle.None;
+            PopularProductTable.CellBorderStyle = DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Transparent;
+            dataGridViewCellStyle2.Font = new Font("MS Reference Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            PopularProductTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            PopularProductTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            PopularProductTable.Columns.AddRange(new DataGridViewColumn[] { id, ProductNameColumnDashboard, ProductSale });
+            PopularProductTable.Dock = DockStyle.Fill;
+            PopularProductTable.GridColor = Color.Silver;
+            PopularProductTable.Location = new Point(0, 0);
+            PopularProductTable.Name = "PopularProductTable";
+            PopularProductTable.ReadOnly = true;
+            PopularProductTable.Size = new Size(1307, 221);
+            PopularProductTable.TabIndex = 8;
             // 
             // id
             // 
@@ -345,7 +345,7 @@
             // 
             // panel7
             // 
-            panel7.Controls.Add(dataGridView1);
+            panel7.Controls.Add(PopularProductTable);
             panel7.Location = new Point(140, 840);
             panel7.Name = "panel7";
             panel7.Size = new Size(1307, 221);
@@ -385,7 +385,7 @@
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PopularProductTable).EndInit();
             panel7.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -396,23 +396,23 @@
         private Label label1;
         private Panel panel1;
         private Label label2;
-        private Label label8;
+        private Label TodayOrderLabel;
         private Panel panel2;
-        private Label label3;
+        private Label TodaySaleLabel;
         private Label label4;
         private Panel panel3;
-        private Label label9;
+        private Label TotalOrderLabel;
         private Label label10;
         private Panel panel4;
-        private Label label5;
-        private Label label11;
+        private Label TotalSaleLabel;
+        private Label TotalSaletext;
         private Panel panel5;
-        private Label label6;
+        private Label TotalVatLabel;
         private Label label12;
         private Panel panel6;
-        private Label label7;
+        private Label AovLabel;
         private Label label13;
-        public DataGridView dataGridView1;
+        public DataGridView PopularProductTable;
         private Panel panel7;
         private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn ProductNameColumnDashboard;

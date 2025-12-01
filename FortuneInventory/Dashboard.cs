@@ -28,10 +28,11 @@ namespace FortuneInventory
             HookSidebarButtonHover(OrderButton);
             HookSidebarButtonHover(InventoryButton);
             HookSidebarButtonHover(UserManageButton);
-            
+            HookSidebarButtonHover(CheckoutHistoryButton);
+
         }
 
-        
+
 
         private void HookSidebarButtonHover(Button button)
         {
@@ -55,7 +56,7 @@ namespace FortuneInventory
 
         private void ResetAllButtons()
         {
-            var buttons = new[] { DashboardButton, OrderButton, InventoryButton, UserManageButton };
+            var buttons = new[] { DashboardButton, OrderButton, InventoryButton, UserManageButton, CheckoutHistoryButton, SettingButton };
             foreach (var button in buttons)
             {
                 if (button != null)
@@ -122,6 +123,17 @@ namespace FortuneInventory
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            loadform(new CheckoutHistory());
+            SetActiveButton(CheckoutHistoryButton);
+        }
+
+        private void SettingButton_Click(object sender, EventArgs e)
+        {
+            SetActiveButton(SettingButton);
         }
     }
 }

@@ -32,8 +32,9 @@ namespace FortuneInventory
                 using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
                     connection.Open();
-                    // Check if username matches firstName, lastName, or "firstName lastName"
-                    string query = @"SELECT COUNT(*) FROM users_t 
+                    // Get userID along with authentication check
+                    string query = @"SELECT userID, firstName + ' ' + lastName AS FullName
+                                    FROM users_t 
                                     WHERE password = @password 
                                     AND (
                                         (firstName + ' ' + lastName) = @username
@@ -44,8 +45,17 @@ namespace FortuneInventory
                         command.Parameters.AddWithValue("@username", _username);
                         command.Parameters.AddWithValue("@password", _password);
                         
-                        int userCount = (int)command.ExecuteScalar();
-                        return userCount > 0;
+                        using (var reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                // Store user ID and name in session
+                                UserSession.CurrentUserId = reader["userID"] is int id ? id : Convert.ToInt32(reader["userID"]);
+                                UserSession.CurrentUserName = reader["FullName"]?.ToString();
+                                return true;
+                            }
+                            return false;
+                        }
                     }
                 }
             }

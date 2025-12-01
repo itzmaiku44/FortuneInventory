@@ -153,6 +153,16 @@ namespace FortuneInventory.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap History__Streamline_Unicons {
+            get {
+                object obj = ResourceManager.GetObject("History--Streamline-Unicons", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap No_Poverty__Streamline_Core {
             get {
                 object obj = ResourceManager.GetObject("No-Poverty--Streamline-Core", resourceCulture);

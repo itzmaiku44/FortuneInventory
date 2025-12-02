@@ -119,8 +119,6 @@
             SettingButton.BackColor = Color.Transparent;
             SettingButton.FlatAppearance.BorderSize = 0;
             SettingButton.FlatAppearance.CheckedBackColor = Color.Transparent;
-            SettingButton.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            SettingButton.FlatAppearance.MouseOverBackColor = Color.Transparent;
             SettingButton.FlatStyle = FlatStyle.Flat;
             SettingButton.Font = new Font("Franklin Gothic Medium Cond", 15.75F);
             SettingButton.ForeColor = SystemColors.Control;

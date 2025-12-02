@@ -105,6 +105,7 @@ namespace FortuneInventory
                            p.imagePath
                     FROM dbo.products_t p
                     WHERE ISNULL(p.quantity, 0) > 0
+                      AND ISNULL(p.isActive, 1) = 1
                     ORDER BY p.productID;";
 
                 using var cmd = new SqlCommand(sql, conn);

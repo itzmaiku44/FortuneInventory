@@ -236,6 +236,45 @@ namespace FortuneInventory
         }
 
         /// <summary>
+        /// Gets total sales amount for a specific cashier/user (optional date range)
+        /// </summary>
+        public decimal GetTotalSalesForUser(int cashierId, DateTime? startDate = null, DateTime? endDate = null)
+        {
+            try
+            {
+                using var conn = new SqlConnection(_connectionString);
+                conn.Open();
+
+                string sql = "SELECT SUM(totalPrice) FROM dbo.order_t WHERE cashierID = @cashierID";
+                var parameters = new List<SqlParameter>
+                {
+                    new SqlParameter("@cashierID", cashierId)
+                };
+
+                if (startDate.HasValue && endDate.HasValue)
+                {
+                    sql += " AND date >= @startDate AND date <= @endDate";
+                    parameters.Add(new SqlParameter("@startDate", startDate.Value));
+                    parameters.Add(new SqlParameter("@endDate", endDate.Value));
+                }
+
+                using var cmd = new SqlCommand(sql, conn);
+                foreach (var param in parameters)
+                {
+                    cmd.Parameters.Add(param);
+                }
+
+                object result = cmd.ExecuteScalar();
+                return result != DBNull.Value && result != null ? Convert.ToDecimal(result) : 0;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Failed to get total sales for user: {ex.Message}");
+                return 0;
+            }
+        }
+
+        /// <summary>
         /// Gets count of orders for a date range
         /// </summary>
         public int GetOrderCount(DateTime? startDate = null, DateTime? endDate = null)
@@ -267,6 +306,45 @@ namespace FortuneInventory
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine($"Failed to get order count: {ex.Message}");
+                return 0;
+            }
+        }
+
+        /// <summary>
+        /// Gets count of orders for a specific cashier/user (optional date range)
+        /// </summary>
+        public int GetOrderCountForUser(int cashierId, DateTime? startDate = null, DateTime? endDate = null)
+        {
+            try
+            {
+                using var conn = new SqlConnection(_connectionString);
+                conn.Open();
+
+                string sql = "SELECT COUNT(DISTINCT orderID) FROM dbo.order_t WHERE cashierID = @cashierID";
+                var parameters = new List<SqlParameter>
+                {
+                    new SqlParameter("@cashierID", cashierId)
+                };
+
+                if (startDate.HasValue && endDate.HasValue)
+                {
+                    sql += " AND date >= @startDate AND date <= @endDate";
+                    parameters.Add(new SqlParameter("@startDate", startDate.Value));
+                    parameters.Add(new SqlParameter("@endDate", endDate.Value));
+                }
+
+                using var cmd = new SqlCommand(sql, conn);
+                foreach (var param in parameters)
+                {
+                    cmd.Parameters.Add(param);
+                }
+
+                object result = cmd.ExecuteScalar();
+                return result != DBNull.Value && result != null ? Convert.ToInt32(result) : 0;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Failed to get order count for user: {ex.Message}");
                 return 0;
             }
         }

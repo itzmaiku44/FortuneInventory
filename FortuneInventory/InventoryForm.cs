@@ -180,6 +180,7 @@ namespace FortuneInventory
 								   p.imagePath
 							FROM   dbo.products_t p
 							LEFT JOIN dbo.categories_t c ON p.categoryID = c.categoryID
+							WHERE  ISNULL(p.isActive, 1) = 1
 							ORDER BY p.productID;";
 
 				using var cmd = new SqlCommand(sql, conn);
@@ -393,8 +394,8 @@ namespace FortuneInventory
 		private void DeleteProduct(int productId)
 		{
 			var confirm = MessageBox.Show(this,
-				"Are you sure you want to delete this product?",
-				"Delete Product",
+				"Are you sure you want to remove this product from inventory?\n\nExisting sale history will be kept, but the product will no longer appear in inventory or ordering.",
+				"Remove Product",
 				MessageBoxButtons.YesNo,
 				MessageBoxIcon.Warning);
 
@@ -407,7 +408,10 @@ namespace FortuneInventory
 			{
 				using var conn = new SqlConnection(_connectionString);
 				conn.Open();
-				using var cmd = new SqlCommand("DELETE FROM dbo.products_t WHERE productID = @id;", conn);
+
+				// Soft delete: mark product as inactive so it no longer appears,
+				// but keep sale history that references it.
+				using var cmd = new SqlCommand("UPDATE dbo.products_t SET isActive = 0 WHERE productID = @id;", conn);
 				cmd.Parameters.AddWithValue("@id", productId);
 				cmd.ExecuteNonQuery();
 			}

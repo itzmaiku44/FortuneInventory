@@ -73,6 +73,16 @@ namespace FortuneInventory.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap adminLabel {
+            get {
+                object obj = ResourceManager.GetObject("adminLabel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Contract__Streamline_Tabler {
             get {
                 object obj = ResourceManager.GetObject("Contract--Streamline-Tabler", resourceCulture);
@@ -153,9 +163,39 @@ namespace FortuneInventory.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hidePass {
+            get {
+                object obj = ResourceManager.GetObject("hidePass", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hidePassBLACK {
+            get {
+                object obj = ResourceManager.GetObject("hidePassBLACK", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap History__Streamline_Unicons {
             get {
                 object obj = ResourceManager.GetObject("History--Streamline-Unicons", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Log_Out_Sharp__Streamline_Ionic_Sharp {
+            get {
+                object obj = ResourceManager.GetObject("Log-Out-Sharp--Streamline-Ionic-Sharp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -206,6 +246,36 @@ namespace FortuneInventory.Properties {
         internal static System.Drawing.Bitmap Shopping_Cart_Add__Streamline_Core_Neon {
             get {
                 object obj = ResourceManager.GetObject("Shopping-Cart-Add--Streamline-Core-Neon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap showPass {
+            get {
+                object obj = ResourceManager.GetObject("showPass", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap showPassBLACK {
+            get {
+                object obj = ResourceManager.GetObject("showPassBLACK", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap staffLabel {
+            get {
+                object obj = ResourceManager.GetObject("staffLabel", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

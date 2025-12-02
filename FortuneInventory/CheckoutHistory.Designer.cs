@@ -177,7 +177,7 @@ namespace FortuneInventory
             // 
             QuantityColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             QuantityColumn.FillWeight = 15F;
-            QuantityColumn.HeaderText = "Quantity";
+            QuantityColumn.HeaderText = "Qty";
             QuantityColumn.Name = "QuantityColumn";
             QuantityColumn.ReadOnly = true;
             QuantityColumn.Resizable = DataGridViewTriState.False;

@@ -24,12 +24,14 @@ namespace FortuneInventory
             InitializeComponent();
 
             loadform(new DashboardForm());
+            SetActiveButton(DashboardButton);
             HookSidebarButtonHover(DashboardButton);
             HookSidebarButtonHover(OrderButton);
             HookSidebarButtonHover(InventoryButton);
             HookSidebarButtonHover(UserManageButton);
             HookSidebarButtonHover(CheckoutHistoryButton);
 
+            ApplyRoleAccess();
         }
 
 
@@ -111,6 +113,16 @@ namespace FortuneInventory
 
         private void UserManageButton_Click(object sender, EventArgs e)
         {
+            if (!UserSession.IsAdmin)
+            {
+                MessageBox.Show(this,
+                    "You do not have permission to access user management.",
+                    "Access Denied",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
             loadform(new UserManageForm());
             SetActiveButton(UserManageButton);
         }
@@ -127,13 +139,36 @@ namespace FortuneInventory
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (!UserSession.IsAdmin)
+            {
+                MessageBox.Show(this,
+                    "You do not have permission to view checkout history.",
+                    "Access Denied",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
             loadform(new CheckoutHistory());
             SetActiveButton(CheckoutHistoryButton);
         }
 
         private void SettingButton_Click(object sender, EventArgs e)
         {
-            SetActiveButton(SettingButton);
+            SettingsForm settingsForm = new SettingsForm();
+            settingsForm.ShowDialog();
+        }
+
+        private void ApplyRoleAccess()
+        {
+            // Only Admin (roleID = 1) can see User Management and Checkout History
+            bool isAdmin = UserSession.IsAdmin;
+
+            UserManageButton.Visible = isAdmin;
+            UserManageButton.Enabled = isAdmin;
+
+            CheckoutHistoryButton.Visible = isAdmin;
+            CheckoutHistoryButton.Enabled = isAdmin;
         }
     }
 }

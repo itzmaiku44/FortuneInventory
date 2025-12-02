@@ -21,6 +21,7 @@ namespace FortuneInventory
             AcceptButton = button1;
             button1.Click += Button1_Click;
             FormClosed += LoginForm_FormClosed;
+            Load += LoginForm_Load;
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -75,6 +76,13 @@ namespace FortuneInventory
             // Authentication successful - proceed to dashboard
             await Task.Delay(TimeSpan.FromSeconds(1)); // Brief delay for smooth transition
 
+            // Log login time
+            if (UserSession.CurrentUserId.HasValue)
+            {
+                var loginHistory = new LoginHistoryService();
+                loginHistory.LogLogin(UserSession.CurrentUserId.Value);
+            }
+
             if (_dashboard == null || _dashboard.IsDisposed)
             {
                 _dashboard = new Dashboard();
@@ -118,7 +126,7 @@ namespace FortuneInventory
             CloseWindowControl();
         }
 
-        private static async Task FadeOutAsync(Form form, double step = 0.05, int interval = 15)
+        public static async Task FadeOutAsync(Form form, double step = 0.05, int interval = 15)
         {
             while (form.Opacity > step)
             {
@@ -129,7 +137,7 @@ namespace FortuneInventory
             form.Opacity = 0;
         }
 
-        private static async Task FadeInAsync(Form form, double step = 0.03, int interval = 10)
+        public static async Task FadeInAsync(Form form, double step = 0.03, int interval = 10)
         {
             form.Opacity = 0;
             while (form.Opacity < 1.0)

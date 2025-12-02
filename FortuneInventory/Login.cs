@@ -32,8 +32,8 @@ namespace FortuneInventory
                 using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
                     connection.Open();
-                    // Get userID along with authentication check
-                    string query = @"SELECT userID, firstName + ' ' + lastName AS FullName
+                    // Get userID and roleID along with authentication check
+                    string query = @"SELECT userID, roleID, firstName + ' ' + lastName AS FullName
                                     FROM users_t 
                                     WHERE password = @password 
                                     AND (
@@ -49,8 +49,9 @@ namespace FortuneInventory
                         {
                             if (reader.Read())
                             {
-                                // Store user ID and name in session
+                                // Store user ID, role, and name in session
                                 UserSession.CurrentUserId = reader["userID"] is int id ? id : Convert.ToInt32(reader["userID"]);
+                                UserSession.CurrentUserRoleId = reader["roleID"] is int rid ? rid : Convert.ToInt32(reader["roleID"]);
                                 UserSession.CurrentUserName = reader["FullName"]?.ToString();
                                 return true;
                             }

@@ -180,9 +180,27 @@ namespace FortuneInventory
                 int todayOrders = _saleLedger.GetOrderCount(todayStart, todayEnd);
                 decimal todaySales = _saleLedger.GetTotalSales(todayStart, todayEnd);
 
-                // Total metrics (all time)
-                int totalOrders = _saleLedger.GetOrderCount();
-                decimal totalSales = _saleLedger.GetTotalSales();
+                int totalOrders;
+                decimal totalSales;
+
+                // Total metrics depend on role:
+                // - Admin: all users
+                // - Staff: only their own sales
+                if (UserSession.IsAdmin)
+                {
+                    totalOrders = _saleLedger.GetOrderCount();
+                    totalSales = _saleLedger.GetTotalSales();
+                }
+                else if (UserSession.CurrentUserId.HasValue)
+                {
+                    totalOrders = _saleLedger.GetOrderCountForUser(UserSession.CurrentUserId.Value);
+                    totalSales = _saleLedger.GetTotalSalesForUser(UserSession.CurrentUserId.Value);
+                }
+                else
+                {
+                    totalOrders = 0;
+                    totalSales = 0;
+                }
 
                 // Average Order Value (Total Sales / Total Orders)
                 decimal aov = totalOrders > 0 ? totalSales / totalOrders : 0;

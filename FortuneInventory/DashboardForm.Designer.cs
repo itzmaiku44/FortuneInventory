@@ -34,10 +34,10 @@
             TodayOrderLabel = new Label();
             label2 = new Label();
             panel2 = new Panel();
-            TodaySaleLabel = new Label();
-            label4 = new Label();
-            panel3 = new Panel();
             TotalOrderLabel = new Label();
+            label4 = new Label();
+            TodaySaleLabel = new Label();
+            panel3 = new Panel();
             label10 = new Label();
             panel4 = new Panel();
             TotalSaleLabel = new Label();
@@ -123,17 +123,17 @@
             panel2.Size = new Size(323, 274);
             panel2.TabIndex = 5;
             // 
-            // TodaySaleLabel
+            // TotalOrderLabel
             // 
-            TodaySaleLabel.BackColor = Color.Transparent;
-            TodaySaleLabel.Dock = DockStyle.Fill;
-            TodaySaleLabel.Font = new Font("Segoe UI", 40.25F, FontStyle.Bold);
-            TodaySaleLabel.Location = new Point(0, 56);
-            TodaySaleLabel.Name = "TodaySaleLabel";
-            TodaySaleLabel.Size = new Size(362, 218);
-            TodaySaleLabel.TabIndex = 1;
-            TodaySaleLabel.Text = "P99,999.99";
-            TodaySaleLabel.TextAlign = ContentAlignment.MiddleCenter;
+            TotalOrderLabel.BackColor = Color.Transparent;
+            TotalOrderLabel.Dock = DockStyle.Fill;
+            TotalOrderLabel.Font = new Font("Segoe UI", 44.25F, FontStyle.Bold);
+            TotalOrderLabel.Location = new Point(0, 56);
+            TotalOrderLabel.Name = "TotalOrderLabel";
+            TotalOrderLabel.Size = new Size(323, 218);
+            TotalOrderLabel.TabIndex = 1;
+            TotalOrderLabel.Text = "99,999";
+            TotalOrderLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
@@ -149,6 +149,18 @@
             label4.TabIndex = 0;
             label4.Text = "Total Order";
             // 
+            // TodaySaleLabel
+            // 
+            TodaySaleLabel.BackColor = Color.Transparent;
+            TodaySaleLabel.Dock = DockStyle.Fill;
+            TodaySaleLabel.Font = new Font("Segoe UI", 40.25F, FontStyle.Bold);
+            TodaySaleLabel.Location = new Point(0, 56);
+            TodaySaleLabel.Name = "TodaySaleLabel";
+            TodaySaleLabel.Size = new Size(362, 218);
+            TodaySaleLabel.TabIndex = 1;
+            TodaySaleLabel.Text = "P99,999.99";
+            TodaySaleLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // panel3
             // 
             panel3.BackColor = Color.White;
@@ -158,18 +170,6 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(362, 274);
             panel3.TabIndex = 6;
-            // 
-            // TotalOrderLabel
-            // 
-            TotalOrderLabel.BackColor = Color.Transparent;
-            TotalOrderLabel.Dock = DockStyle.Fill;
-            TotalOrderLabel.Font = new Font("Segoe UI", 44.25F, FontStyle.Bold);
-            TotalOrderLabel.Location = new Point(0, 56);
-            TotalOrderLabel.Name = "TotalOrderLabel";
-            TotalOrderLabel.Size = new Size(323, 218);
-            TotalOrderLabel.TabIndex = 1;
-            TotalOrderLabel.Text = "99,999";
-            TotalOrderLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label10
             // 

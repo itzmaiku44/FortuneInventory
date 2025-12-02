@@ -11,6 +11,18 @@ namespace FortuneInventory
         public CheckoutHistory()
         {
             InitializeComponent();
+
+            if (!UserSession.IsAdmin)
+            {
+                MessageBox.Show(this,
+                    "You do not have permission to view checkout history.",
+                    "Access Denied",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                Close();
+                return;
+            }
+
             Load += CheckoutHistory_Load;
         }
 
